@@ -12,6 +12,12 @@ import { FirebaseService } from './common/firebase.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TasksModule } from './task/tasks.module';
 import { AppController } from './app.controller';
+import { WorkerModule } from './worker/worker.module';
+import { MachineModule } from './machine/machine.module';
+import { SellerModule } from './seller/seller.module';
+import { AgentModule } from './agent/agent.module';
+import { BuyerModule } from './buyer/buyer.module';
+import { GoodsModule } from './goods/goods.module';
 const ENV: string = process.env.NODE_ENV;
 @Module({
   imports: [
@@ -64,6 +70,12 @@ const ENV: string = process.env.NODE_ENV;
     UserModule,
     HttpModule,
     TasksModule,
+    WorkerModule,
+    MachineModule,
+    SellerModule,
+    AgentModule,
+    BuyerModule,
+    GoodsModule,
   ],
   controllers: [UploadController, AppController],
   providers: [FirebaseService, AppService],
