@@ -6,7 +6,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Stock } from './stock.schema';
-import { UpdateStockDto } from './update-Stock.dto';
+import { UpdateStockDto } from './update-stock.dto';
 import { StockRepository } from './stock.repository';
 
 @Injectable()
