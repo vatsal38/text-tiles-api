@@ -21,7 +21,7 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-@ApiTags('Goods')
+@ApiTags('Goods Management')
 @ApiBearerAuth()
 @Controller('goods')
 export class GoodsController {

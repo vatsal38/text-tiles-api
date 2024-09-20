@@ -140,4 +140,20 @@ export class MachineService {
     }
     return updatedMachine;
   }
+
+  async findByMachineNumber(
+    machineNumber: string,
+    userId: string,
+  ): Promise<any> {
+    const machine = await this.MachineRepository.findByMachineNumber(
+      machineNumber,
+      userId,
+    );
+    if (!machine) {
+      throw new NotFoundException(
+        `Machine with number ${machineNumber} not found`,
+      );
+    }
+    return machine;
+  }
 }

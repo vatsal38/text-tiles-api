@@ -18,6 +18,7 @@ import { SellerModule } from './seller/seller.module';
 import { AgentModule } from './agent/agent.module';
 import { BuyerModule } from './buyer/buyer.module';
 import { GoodsModule } from './goods/goods.module';
+import { StockModule } from './stock/stock.module';
 const ENV: string = process.env.NODE_ENV;
 @Module({
   imports: [
@@ -76,6 +77,7 @@ const ENV: string = process.env.NODE_ENV;
     AgentModule,
     BuyerModule,
     GoodsModule,
+    StockModule,
   ],
   controllers: [UploadController, AppController],
   providers: [FirebaseService, AppService],

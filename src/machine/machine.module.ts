@@ -11,5 +11,6 @@ import { MachineRepository } from './machine.repository';
   ],
   controllers: [MachineController],
   providers: [MachineService, MachineRepository],
+  exports: [MachineRepository, MachineService],
 })
 export class MachineModule {}
