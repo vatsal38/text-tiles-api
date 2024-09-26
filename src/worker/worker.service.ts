@@ -13,7 +13,7 @@ export class WorkerService {
 
   async create(Worker: Worker, userId: string): Promise<Worker> {
     try {
-      const codePrefix = 'FAR';
+      const codePrefix = 'WOR';
       const highestCodeWorker =
         await this.WorkerRepository.highestCodeWorker(codePrefix);
       let currentCode = 1;
