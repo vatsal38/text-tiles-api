@@ -22,7 +22,6 @@ export class DashboardController {
     private readonly buyerRepository: BuyerRepository,
     private readonly machineRepository: MachineRepository,
     private readonly sellerRepository: SellerRepository,
-    private readonly stockRepository: StockRepository,
     private readonly workerRepository: WorkerRepository,
   ) {}
 
@@ -36,28 +35,20 @@ export class DashboardController {
   async getCounts(@Req() req: any) {
     console.log('req::: ', req);
     const userId = req.user.userId;
-    const [
-      agentCount,
-      buyerCount,
-      machineCount,
-      sellerCount,
-      stockCount,
-      workerCount,
-    ] = await Promise.all([
-      this.agentRepository.countAll(userId),
-      this.buyerRepository.countAll(userId),
-      this.machineRepository.countAll(userId),
-      this.sellerRepository.countAll(userId),
-      this.stockRepository.countAll(userId),
-      this.workerRepository.countAll(userId),
-    ]);
+    const [agentCount, buyerCount, machineCount, sellerCount, workerCount] =
+      await Promise.all([
+        this.agentRepository.countAll(userId),
+        this.buyerRepository.countAll(userId),
+        this.machineRepository.countAll(userId),
+        this.sellerRepository.countAll(userId),
+        this.workerRepository.countAll(userId),
+      ]);
 
     return {
       agentCount,
       buyerCount,
       machineCount,
       sellerCount,
-      stockCount,
       workerCount,
     };
   }
