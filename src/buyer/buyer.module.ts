@@ -11,5 +11,6 @@ import { BuyerRepository } from './buyer.repository';
   ],
   controllers: [BuyerController],
   providers: [BuyerService, BuyerRepository],
+  exports: [BuyerRepository],
 })
 export class BuyerModule {}

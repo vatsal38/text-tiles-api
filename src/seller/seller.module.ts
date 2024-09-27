@@ -11,5 +11,6 @@ import { SellerRepository } from './seller.repository';
   ],
   controllers: [SellerController],
   providers: [SellerService, SellerRepository],
+  exports: [SellerRepository],
 })
 export class SellerModule {}

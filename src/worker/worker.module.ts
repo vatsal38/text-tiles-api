@@ -11,5 +11,6 @@ import { WorkerRepository } from './worker.repository';
   ],
   controllers: [WorkerController],
   providers: [WorkerService, WorkerRepository],
+  exports: [WorkerRepository],
 })
 export class WorkerModule {}

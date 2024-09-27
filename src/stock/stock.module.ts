@@ -13,5 +13,6 @@ import { StockRepository } from './stock.repository';
   ],
   controllers: [StockController],
   providers: [StockService, StockRepository],
+  exports: [StockRepository],
 })
 export class StockModule {}

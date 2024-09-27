@@ -11,5 +11,6 @@ import { AgentRepository } from './agent.repository';
   ],
   controllers: [AgentController],
   providers: [AgentService, AgentRepository],
+  exports: [AgentRepository],
 })
 export class AgentModule {}
